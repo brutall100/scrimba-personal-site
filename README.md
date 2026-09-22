@@ -10,7 +10,7 @@
 
 A one-page personal site for a CNC machinist who is learning web development.
 The profile (**Alex Doe**) is a placeholder, so the page works as a template anyone can fill in with their own details.
-The page borrows from the machine shop: the portrait is a technical drawing, section markers are written like G-code blocks (`N10`, `N20`, …, `M30`), and the facts sit in a table styled like the title block in the corner of a drawing.
+The facts sit in a table styled like the title block in the corner of a technical drawing, a small nod to the machine shop.
 
 The original Scrimba challenge was to restyle the page by calling four JavaScript functions with your favourites.
 I turned that into a **"Make it yours"** panel so visitors can try it themselves.
@@ -22,7 +22,6 @@ I turned that into a **"Make it yours"** panel so visitors can try it themselves
 - **Shows the code** behind each choice, e.g. `favouriteFruit("blueberry")`
 - **Light and dark mode** that follows your system setting by default
 - **Responsive** from phones to wide screens
-- **Placeholder portrait** drawn in SVG, so it changes colour with the theme
 - **Accessible**: semantic HTML, keyboard focus styles, skip link, respects reduced motion
 
 ## Built with

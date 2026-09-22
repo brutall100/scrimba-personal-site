@@ -24,7 +24,7 @@
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="topbar">
-        <span class="mono">N10 G00 X0 Y0 <span class="muted">; program start</span></span>
+        <a class="brand" href="#main">Alex Doe</a>
         <nav aria-label="Main">
             <a href="#about">About</a>
             <a href="#tweak">Tweak</a>
@@ -34,38 +34,22 @@
 
     <main id="main">
         <section class="hero" aria-labelledby="name">
-            <figure class="portrait">
-                <svg class="avatar" viewBox="0 0 400 520" role="img" aria-labelledby="avatar-title">
-                    <title id="avatar-title">Placeholder portrait drawn like a technical drawing</title>
-                    <rect class="av-bg" x="0" y="0" width="400" height="520" />
-                    <path class="av-center" d="M200 40 V500 M40 200 H360" />
-                    <circle class="av-fill" cx="200" cy="200" r="92" />
-                    <path class="av-fill" d="M50 520 C50 400 120 330 200 330 C280 330 350 400 350 520 Z" />
-                    <circle class="av-line" cx="200" cy="200" r="92" />
-                    <path class="av-line" d="M50 520 C50 400 120 330 200 330 C280 330 350 400 350 520" />
-                    <path class="av-dim" d="M108 70 H292 M108 60 V80 M292 60 V80" />
-                    <path class="av-arrow" d="M108 70 l14 -6 v12 Z M292 70 l-14 -6 v12 Z" />
-                    <text class="av-text" x="200" y="56" text-anchor="middle">Ø 184</text>
-                </svg>
-                <figcaption class="mono">DWG 001 · SCALE 1:1</figcaption>
-            </figure>
-
             <div class="hero-text">
                 <p class="eyebrow mono">Hi, my name is</p>
                 <h1 id="name" class="display">Alex Doe</h1>
                 <p class="lede">CNC machinist by day, learning to build for the web one line of JavaScript at a time.</p>
-
-                <dl class="title-block" aria-label="Facts about me">
-                    <div><dt>Location</dt><dd>Anytown, Europe</dd></div>
-                    <div><dt>Trade</dt><dd>CNC machining</dd></div>
-                    <div><dt>Learning</dt><dd>JavaScript</dd></div>
-                    <div><dt>Course</dt><dd>Scrimba Frontend Path</dd></div>
-                </dl>
             </div>
+
+            <dl class="title-block" aria-label="Facts about me">
+                <div><dt>Location</dt><dd>Anytown, Europe</dd></div>
+                <div><dt>Trade</dt><dd>CNC machining</dd></div>
+                <div><dt>Learning</dt><dd>JavaScript</dd></div>
+                <div><dt>Course</dt><dd>Scrimba Frontend Path</dd></div>
+            </dl>
         </section>
 
         <section id="about" class="block" aria-labelledby="about-title">
-            <p class="eyebrow mono">N20 <span class="muted">; about</span></p>
+            <p class="eyebrow mono">About</p>
             <h2 id="about-title" class="display">Two kinds of code</h2>
             <div class="prose">
                 <p>At work I set up and run CNC machines: load the program, zero the tools, check the part against the drawing. In the evenings I write a different kind of code — HTML, CSS and JavaScript.</p>
@@ -74,7 +58,7 @@
         </section>
 
         <section id="tweak" class="block" aria-labelledby="tweak-title">
-            <p class="eyebrow mono">N30 <span class="muted">; tweak this page</span></p>
+            <p class="eyebrow mono">Try it</p>
             <h2 id="tweak-title" class="display">Make it yours</h2>
             <p class="prose">This was my first Scrimba project. The challenge was to pass a favourite movie genre, fruit, mode and corner style into JavaScript functions that restyle the page through CSS variables. Try it — your picks are remembered on this device.</p>
 
@@ -103,9 +87,9 @@
         </section>
 
         <section id="source" class="block" aria-labelledby="source-title">
-            <p class="eyebrow mono">N40 <span class="muted">; source</span></p>
+            <p class="eyebrow mono">Source</p>
             <h2 id="source-title" class="display">Behind the page</h2>
-            <p class="prose">Alex Doe is a demo profile: the name, place and drawing are placeholders, so this page works as a template anyone can fill in.</p>
+            <p class="prose">Alex Doe is a demo profile: the name and place are placeholders, so this page works as a template anyone can fill in.</p>
             <ul class="links">
                 <li><a class="btn" href="https://github.com/brutall100/scrimba-personal-site" target="_blank" rel="noopener">View the code <span aria-hidden="true">↗</span></a></li>
                 <li><a class="btn btn-ghost" href="https://scrimba.com/learn/frontend" target="_blank" rel="noopener">Scrimba course <span aria-hidden="true">↗</span></a></li>
@@ -114,7 +98,7 @@
     </main>
 
     <footer class="footer mono">
-        <span>M30 <span class="muted">; program end</span></span>
+        <span>© Alex Doe</span>
         <span>Built during <a href="https://scrimba.com/learn/frontend" target="_blank" rel="noopener">Scrimba's Frontend Developer Career Path</a></span>
     </footer>
 </body>
