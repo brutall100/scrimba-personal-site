@@ -6,7 +6,7 @@
     --ink: #1b2024;
     --muted: #5c656c;
     --line: #cdd2d4;
-    --accent: #f2b705;       /* machine-tool yellow, changed by the "fruit" picker */
+    --accent: #f2b705;       /* classic yellow, changed by the "fruit" picker */
     --on-accent: #14181b;
 
     /* type */
@@ -204,7 +204,7 @@ a:hover {
     margin: 1.25rem 0 0;
 }
 
-/* facts laid out like the title block in the corner of a drawing */
+/* facts table */
 .title-block {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));

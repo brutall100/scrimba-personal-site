@@ -8,9 +8,8 @@
 
 ## About
 
-A one-page personal site for a CNC machinist who is learning web development.
+A one-page personal site for someone who is learning web development.
 The profile (**Alex Doe**) is a placeholder, so the page works as a template anyone can fill in with their own details.
-The facts sit in a table styled like the title block in the corner of a technical drawing, a small nod to the machine shop.
 
 The original Scrimba challenge was to restyle the page by calling four JavaScript functions with your favourites.
 I turned that into a **"Make it yours"** panel so visitors can try it themselves.
