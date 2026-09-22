@@ -3,15 +3,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Aldas · CNC machinist learning web development</title>
-    <meta name="description" content="Personal site of Aldas — a CNC machinist from Lithuania learning HTML, CSS and JavaScript. First project from Scrimba's Frontend Developer Career Path.">
-    <meta name="author" content="Aldas">
+    <title>Alex Doe · CNC machinist learning web development</title>
+    <meta name="description" content="Personal site template for a CNC machinist learning HTML, CSS and JavaScript. First project from Scrimba's Frontend Developer Career Path.">
     <meta name="theme-color" content="#14181b">
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Aldas · CNC machinist learning web development">
+    <meta property="og:title" content="Alex Doe · CNC machinist learning web development">
     <meta property="og:description" content="Personal site built during Scrimba's Frontend Developer Career Path.">
-    <meta property="og:image" content="images/aldas.jpg">
+    <meta property="og:image" content="docs/screenshot.png">
 
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2314181b'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='19' fill='%23f2b705'%3EA%3C/text%3E%3C/svg%3E">
 
@@ -29,27 +28,35 @@
         <nav aria-label="Main">
             <a href="#about">About</a>
             <a href="#tweak">Tweak</a>
-            <a href="#contact">Contact</a>
+            <a href="#source">Source</a>
         </nav>
     </header>
 
     <main id="main">
         <section class="hero" aria-labelledby="name">
             <figure class="portrait">
-                <picture>
-                    <source srcset="images/aldas.webp" type="image/webp">
-                    <img src="images/aldas.jpg" width="555" height="771" alt="Portrait of Aldas outdoors by a lake">
-                </picture>
+                <svg class="avatar" viewBox="0 0 400 520" role="img" aria-labelledby="avatar-title">
+                    <title id="avatar-title">Placeholder portrait drawn like a technical drawing</title>
+                    <rect class="av-bg" x="0" y="0" width="400" height="520" />
+                    <path class="av-center" d="M200 40 V500 M40 200 H360" />
+                    <circle class="av-fill" cx="200" cy="200" r="92" />
+                    <path class="av-fill" d="M50 520 C50 400 120 330 200 330 C280 330 350 400 350 520 Z" />
+                    <circle class="av-line" cx="200" cy="200" r="92" />
+                    <path class="av-line" d="M50 520 C50 400 120 330 200 330 C280 330 350 400 350 520" />
+                    <path class="av-dim" d="M108 70 H292 M108 60 V80 M292 60 V80" />
+                    <path class="av-arrow" d="M108 70 l14 -6 v12 Z M292 70 l-14 -6 v12 Z" />
+                    <text class="av-text" x="200" y="56" text-anchor="middle">Ø 184</text>
+                </svg>
                 <figcaption class="mono">DWG 001 · SCALE 1:1</figcaption>
             </figure>
 
             <div class="hero-text">
                 <p class="eyebrow mono">Hi, my name is</p>
-                <h1 id="name" class="display">Aldas</h1>
-                <p class="lede">CNC machinist from Lithuania, learning to build for the web one line of JavaScript at a time.</p>
+                <h1 id="name" class="display">Alex Doe</h1>
+                <p class="lede">CNC machinist by day, learning to build for the web one line of JavaScript at a time.</p>
 
                 <dl class="title-block" aria-label="Facts about me">
-                    <div><dt>Location</dt><dd>Lithuania</dd></div>
+                    <div><dt>Location</dt><dd>Anytown, Europe</dd></div>
                     <div><dt>Trade</dt><dd>CNC machining</dd></div>
                     <div><dt>Learning</dt><dd>JavaScript</dd></div>
                     <div><dt>Course</dt><dd>Scrimba Frontend Path</dd></div>
@@ -95,19 +102,20 @@
             </form>
         </section>
 
-        <section id="contact" class="block" aria-labelledby="contact-title">
-            <p class="eyebrow mono">N40 <span class="muted">; contact</span></p>
-            <h2 id="contact-title" class="display">Let's connect</h2>
+        <section id="source" class="block" aria-labelledby="source-title">
+            <p class="eyebrow mono">N40 <span class="muted">; source</span></p>
+            <h2 id="source-title" class="display">Behind the page</h2>
+            <p class="prose">Alex Doe is a demo profile: the name, place and drawing are placeholders, so this page works as a template anyone can fill in.</p>
             <ul class="links">
-                <li><a class="btn" href="https://github.com/brutall100" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a></li>
-                <li><a class="btn btn-ghost" href="https://x.com/brutall100" target="_blank" rel="noopener">X / Twitter <span aria-hidden="true">↗</span></a></li>
+                <li><a class="btn" href="https://github.com/brutall100/scrimba-personal-site" target="_blank" rel="noopener">View the code <span aria-hidden="true">↗</span></a></li>
+                <li><a class="btn btn-ghost" href="https://scrimba.com/learn/frontend" target="_blank" rel="noopener">Scrimba course <span aria-hidden="true">↗</span></a></li>
             </ul>
         </section>
     </main>
 
     <footer class="footer mono">
         <span>M30 <span class="muted">; program end</span></span>
-        <span>Built by Aldas during <a href="https://scrimba.com/learn/frontend" target="_blank" rel="noopener">Scrimba's Frontend Developer Career Path</a></span>
+        <span>Built during <a href="https://scrimba.com/learn/frontend" target="_blank" rel="noopener">Scrimba's Frontend Developer Career Path</a></span>
     </footer>
 </body>
 </html>

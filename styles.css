@@ -203,14 +203,21 @@ a:hover {
     border-bottom-width: 3px;
 }
 
-.portrait img {
+.avatar {
+    display: block;
     width: 100%;
-    aspect-ratio: 555 / 771;
-    object-fit: cover;
+    height: auto;
     border-radius: var(--radius);
-    filter: saturate(.9);
     transition: border-radius .3s;
 }
+
+.av-bg { fill: var(--surface); stroke: var(--line); stroke-width: 2; }
+.av-fill { fill: color-mix(in srgb, var(--accent) 22%, var(--surface)); }
+.av-line { fill: none; stroke: var(--ink); stroke-width: 4; }
+.av-center { fill: none; stroke: var(--muted); stroke-width: 1.5; stroke-dasharray: 24 6 4 6; }
+.av-dim { fill: none; stroke: var(--muted); stroke-width: 1.5; }
+.av-arrow { fill: var(--muted); }
+.av-text { fill: var(--muted); font: 500 18px var(--font-mono); }
 
 .portrait figcaption {
     margin-top: .6rem;

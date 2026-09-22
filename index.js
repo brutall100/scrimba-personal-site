@@ -46,7 +46,7 @@ const OPTIONS = {
     },
 }
 
-const STORAGE_KEY = "aldas-site-style"
+const STORAGE_KEY = "personal-site-style"
 const root = document.documentElement
 
 function setProp(prop, value) {
