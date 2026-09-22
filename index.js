@@ -1,89 +1,195 @@
-// Challenge 2:
-// Replace the arguments below according to your preference.
+// Scrimba challenge, upgraded:
+// the original version hard-coded favouriteMovieGenre("..."), favouriteFruit("..."),
+// favouriteMode("...") and favouriteEdgeStyle("...").
+// Now visitors pick the values themselves and the page restyles itself
+// through CSS custom properties.
 
-// space, scary, military, romantic, cowboy, fantasy, superhero
-favouriteMovieGenre("supergero")
+const OPTIONS = {
+    genre: {
+        default: "industrial",
+        items: {
+            industrial: { label: "Industrial", font: "'Barlow Condensed', 'Arial Narrow', sans-serif" },
+            space: { label: "Space", font: "'Orbitron', 'Barlow Condensed', sans-serif", google: "Orbitron:wght@700" },
+            superhero: { label: "Superhero", font: "'Bangers', 'Barlow Condensed', sans-serif", google: "Bangers" },
+            military: { label: "Military", font: "'Black Ops One', 'Barlow Condensed', sans-serif", google: "Black+Ops+One" },
+            cowboy: { label: "Cowboy", font: "'Rye', 'Barlow Condensed', sans-serif", google: "Rye" },
+            fantasy: { label: "Fantasy", font: "'MedievalSharp', 'Barlow Condensed', sans-serif", google: "MedievalSharp" },
+            scary: { label: "Scary", font: "'Creepster', 'Barlow Condensed', sans-serif", google: "Creepster" },
+        },
+    },
+    fruit: {
+        default: "none",
+        items: {
+            none: { label: "Machine yellow", color: "#f2b705" },
+            watermelon: { label: "Watermelon", color: "#ef5b6b" },
+            orange: { label: "Orange", color: "#f7931e" },
+            banana: { label: "Banana", color: "#f5d547" },
+            avocado: { label: "Avocado", color: "#86b049" },
+            blueberry: { label: "Blueberry", color: "#5b8cff" },
+        },
+    },
+    mode: {
+        default: "auto",
+        items: {
+            auto: { label: "Auto" },
+            light: { label: "Light" },
+            dark: { label: "Dark" },
+        },
+    },
+    edge: {
+        default: "soft",
+        items: {
+            sharp: { label: "Sharp", radius: "0px" },
+            soft: { label: "Soft", radius: "10px" },
+            round: { label: "Round", radius: "28px" },
+        },
+    },
+}
 
-// watermelon, tomato, banana, orange, avocado, blueberry
-favouriteFruit("watermelon")
-
-// light, dark
-favouriteMode("dark")
-
-// sharp, soft, round
-favouriteEdgeStyle("soft")
-
-
-
-////////////////////////////////////
-// IGONE THE CODE BELOW THIS LINE //
-////////////////////////////////////
+const STORAGE_KEY = "aldas-site-style"
+const root = document.documentElement
 
 function setProp(prop, value) {
-    document.documentElement.style.setProperty(prop, value)
+    root.style.setProperty(prop, value)
 }
 
-function favouriteEdgeStyle(style) {
-    setProp("--image", "var(--" + style + ")");
+function loadGoogleFont(family) {
+    const id = "font-" + family
+    if (document.getElementById(id)) return
+    const link = document.createElement("link")
+    link.id = id
+    link.rel = "stylesheet"
+    link.href = "https://fonts.googleapis.com/css2?family=" + family + "&display=swap"
+    document.head.appendChild(link)
 }
 
-function favouriteMovieGenre(font) {
-    if (font) {
-        setProp("--font", "var(--" + font + ")");    
-    }
+function favouriteMovieGenre(genre) {
+    const item = OPTIONS.genre.items[genre]
+    if (item.google) loadGoogleFont(item.google)
+    setProp("--font-heading", item.font)
+}
+
+function favouriteFruit(fruit) {
+    setProp("--accent", OPTIONS.fruit.items[fruit].color)
 }
 
 function favouriteMode(mode) {
-    if (mode === "light" || !mode) {
-        setProp('--background', "var(--light)");
-        setProp('--text', "var(--dark)");
-    } else if (mode === "dark") {
-        setProp('--background', "var(--dark)");
-        setProp('--text', "var(--light)");
+    if (mode === "auto") {
+        root.removeAttribute("data-mode")
+    } else {
+        root.setAttribute("data-mode", mode)
     }
 }
 
-function favouriteFruit(theme) {
-    if (theme === "pastel") {
-        setProp('--light', "#f2f6c3")
-        setProp('--dark', "#68c4af")
-    } else if (theme === "muted") {
-        setProp('--light', "#4c5b64")
-        setProp('--dark', "#45241c")
-    } else if (theme === "love") {
-        setProp('--light', "#f06836")
-        setProp('--dark', "#ba0001")
-    } else if (theme === "sky") {
-        setProp('--light', "#99ccff")
-        setProp('--dark', "#3366ff")
-    } else if (theme === "forrest") {
-        setProp('--light', "#91B247")
-        setProp('--dark', "#597C2B")
-    }  else if (theme === "shiny") {
-        setProp('--light', "#2e9afe")
-        setProp('--dark', "#02197c")
-    } else if (theme === "banana") {
-        setProp('--light', "#fbec5d")
-        setProp('--dark', "#6b3e26")
-    } else if (theme === "watermelon") {
-        setProp('--light', "#75b855")
-        setProp('--dark', "#ad3838")
-    } else if (theme === "tomato") {
-        setProp('--light', "#d62e2e")
-        setProp('--dark', "#600000")
-    } else if (theme === "avocado") {
-        setProp('--light', "#6b8c21")
-        setProp('--dark', "#704012")
-    } else if (theme === "orange") {
-        setProp('--light', "#ffca16")
-        setProp('--dark', "#f97300")
-    } else if (theme === "blueberry") {
-        setProp('--light', "#41a8f9")
-        setProp('--dark', "#064490")
-    } else  {
-        setProp('--light', "#f5f5f5")
-        setProp('--dark', "#222222")
-    } 
+function favouriteEdgeStyle(edge) {
+    setProp("--radius", OPTIONS.edge.items[edge].radius)
 }
 
+const APPLY = {
+    genre: favouriteMovieGenre,
+    fruit: favouriteFruit,
+    mode: favouriteMode,
+    edge: favouriteEdgeStyle,
+}
 
+const CALL_NAMES = {
+    genre: "favouriteMovieGenre",
+    fruit: "favouriteFruit",
+    mode: "favouriteMode",
+    edge: "favouriteEdgeStyle",
+}
+
+function defaults() {
+    const state = {}
+    for (const group in OPTIONS) state[group] = OPTIONS[group].default
+    return state
+}
+
+function readSaved() {
+    try {
+        const saved = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}
+        const state = defaults()
+        for (const group in OPTIONS) {
+            if (saved[group] in OPTIONS[group].items) state[group] = saved[group]
+        }
+        return state
+    } catch {
+        return defaults()
+    }
+}
+
+function save(state) {
+    try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state))
+    } catch {
+        // storage blocked (private mode etc.) - the page still works
+    }
+}
+
+function applyAll(state) {
+    for (const group in APPLY) APPLY[group](state[group])
+    showCode(state)
+}
+
+function showCode(state) {
+    const code = document.getElementById("tweak-code")
+    if (!code) return
+    code.textContent = Object.keys(CALL_NAMES)
+        .map((group) => CALL_NAMES[group] + '("' + state[group] + '")')
+        .join("  ")
+}
+
+function buildChips(state) {
+    document.querySelectorAll(".chips[data-group]").forEach((container) => {
+        const group = container.dataset.group
+        for (const [value, item] of Object.entries(OPTIONS[group].items)) {
+            const label = document.createElement("label")
+            label.className = "chip"
+
+            const input = document.createElement("input")
+            input.type = "radio"
+            input.name = group
+            input.value = value
+            input.id = group + "-" + value
+            input.checked = state[group] === value
+
+            const text = document.createElement("span")
+            if (item.color) {
+                const swatch = document.createElement("i")
+                swatch.className = "swatch"
+                swatch.style.background = item.color
+                text.appendChild(swatch)
+            }
+            text.append(item.label)
+
+            label.append(input, text)
+            container.appendChild(label)
+        }
+    })
+}
+
+// Apply saved choices right away (script is deferred, so the DOM is ready)
+let state = readSaved()
+applyAll(state)
+buildChips(state)
+
+const form = document.getElementById("tweak-form")
+
+form.addEventListener("change", (event) => {
+    const { name, value } = event.target
+    if (!(name in OPTIONS)) return
+    state[name] = value
+    APPLY[name](value)
+    showCode(state)
+    save(state)
+})
+
+form.addEventListener("reset", (event) => {
+    event.preventDefault()
+    state = defaults()
+    for (const group in state) {
+        document.getElementById(group + "-" + state[group]).checked = true
+    }
+    applyAll(state)
+    save(state)
+})

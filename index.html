@@ -1,24 +1,113 @@
 <!doctype html>
-<html>
-    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
-        <link rel="stylesheet" href="styles.css" />
-        <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Black+Ops+One&family=Creepster&family=La+Belle+Aurore&family=MedievalSharp&family=Orbitron&family=Rye&display=swap" rel="stylesheet">
-        <script src="index.js"></script>
-    </head>
-    <body>
-        <img src="Aldas.jpg" height="auto" width="50%">
-        <h1>Hi, my name is Aldas</h1>
-        <h2>Facts about me:</h2>
-            <ul>
-                <li>36 old</li>
-                <li>Live in Litua</li>
-                <li>Work with cnc</li>
-                <li>Learning JS</li>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aldas · CNC machinist learning web development</title>
+    <meta name="description" content="Personal site of Aldas — a CNC machinist from Lithuania learning HTML, CSS and JavaScript. First project from Scrimba's Frontend Developer Career Path.">
+    <meta name="author" content="Aldas">
+    <meta name="theme-color" content="#14181b">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Aldas · CNC machinist learning web development">
+    <meta property="og:description" content="Personal site built during Scrimba's Frontend Developer Career Path.">
+    <meta property="og:image" content="images/aldas.jpg">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2314181b'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='19' fill='%23f2b705'%3EA%3C/text%3E%3C/svg%3E">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+    <link rel="stylesheet" href="styles.css">
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="topbar">
+        <span class="mono">N10 G00 X0 Y0 <span class="muted">; program start</span></span>
+        <nav aria-label="Main">
+            <a href="#about">About</a>
+            <a href="#tweak">Tweak</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main id="main">
+        <section class="hero" aria-labelledby="name">
+            <figure class="portrait">
+                <picture>
+                    <source srcset="images/aldas.webp" type="image/webp">
+                    <img src="images/aldas.jpg" width="555" height="771" alt="Portrait of Aldas outdoors by a lake">
+                </picture>
+                <figcaption class="mono">DWG 001 · SCALE 1:1</figcaption>
+            </figure>
+
+            <div class="hero-text">
+                <p class="eyebrow mono">Hi, my name is</p>
+                <h1 id="name" class="display">Aldas</h1>
+                <p class="lede">CNC machinist from Lithuania, learning to build for the web one line of JavaScript at a time.</p>
+
+                <dl class="title-block" aria-label="Facts about me">
+                    <div><dt>Location</dt><dd>Lithuania</dd></div>
+                    <div><dt>Trade</dt><dd>CNC machining</dd></div>
+                    <div><dt>Learning</dt><dd>JavaScript</dd></div>
+                    <div><dt>Course</dt><dd>Scrimba Frontend Path</dd></div>
+                </dl>
+            </div>
+        </section>
+
+        <section id="about" class="block" aria-labelledby="about-title">
+            <p class="eyebrow mono">N20 <span class="muted">; about</span></p>
+            <h2 id="about-title" class="display">Two kinds of code</h2>
+            <div class="prose">
+                <p>At work I set up and run CNC machines: load the program, zero the tools, check the part against the drawing. In the evenings I write a different kind of code — HTML, CSS and JavaScript.</p>
+                <p>Both jobs reward the same habit: <strong>measure twice, cut once.</strong> A G-code program and a web page are both instructions that have to be exact, or the result comes out wrong.</p>
+            </div>
+        </section>
+
+        <section id="tweak" class="block" aria-labelledby="tweak-title">
+            <p class="eyebrow mono">N30 <span class="muted">; tweak this page</span></p>
+            <h2 id="tweak-title" class="display">Make it yours</h2>
+            <p class="prose">This was my first Scrimba project. The challenge was to pass a favourite movie genre, fruit, mode and corner style into JavaScript functions that restyle the page through CSS variables. Try it — your picks are remembered on this device.</p>
+
+            <form class="panel" id="tweak-form" aria-label="Page style">
+                <fieldset>
+                    <legend class="mono">Movie genre → headline font</legend>
+                    <div class="chips" data-group="genre"></div>
+                </fieldset>
+                <fieldset>
+                    <legend class="mono">Fruit → accent colour</legend>
+                    <div class="chips" data-group="fruit"></div>
+                </fieldset>
+                <fieldset>
+                    <legend class="mono">Mode</legend>
+                    <div class="chips" data-group="mode"></div>
+                </fieldset>
+                <fieldset>
+                    <legend class="mono">Edge style</legend>
+                    <div class="chips" data-group="edge"></div>
+                </fieldset>
+                <div class="panel-foot">
+                    <code class="mono" id="tweak-code" aria-live="polite"></code>
+                    <button type="reset" class="btn-ghost" id="tweak-reset">Reset</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="contact" class="block" aria-labelledby="contact-title">
+            <p class="eyebrow mono">N40 <span class="muted">; contact</span></p>
+            <h2 id="contact-title" class="display">Let's connect</h2>
+            <ul class="links">
+                <li><a class="btn" href="https://github.com/brutall100" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a></li>
+                <li><a class="btn btn-ghost" href="https://x.com/brutall100" target="_blank" rel="noopener">X / Twitter <span aria-hidden="true">↗</span></a></li>
             </ul>
-            <p>Please conect with me 
-               <a href="https://twitter.com/brutall100" target="_blank">Twitter.</a>
-            </p>
-        <input type="text" placeholder="Enter email...">
-        <button>Join newsletter</button>
-    </body>
+        </section>
+    </main>
+
+    <footer class="footer mono">
+        <span>M30 <span class="muted">; program end</span></span>
+        <span>Built by Aldas during <a href="https://scrimba.com/learn/frontend" target="_blank" rel="noopener">Scrimba's Frontend Developer Career Path</a></span>
+    </footer>
+</body>
 </html>
