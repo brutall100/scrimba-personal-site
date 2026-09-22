@@ -149,6 +149,25 @@ a:hover {
     border-bottom: 1px solid var(--line);
 }
 
+.brand {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.375rem;
+    letter-spacing: .02em;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.brand::after {
+    content: "";
+    display: inline-block;
+    width: .4em;
+    height: .4em;
+    margin-left: .15em;
+    background: var(--accent);
+    border-radius: 50%;
+}
+
 .topbar nav {
     display: flex;
     gap: 1.25rem;
@@ -167,61 +186,10 @@ a:hover {
 /* ---------- Hero ---------- */
 .hero {
     display: grid;
-    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 27rem);
     gap: clamp(1.5rem, 5vw, 4rem);
-    align-items: center;
-    padding-block: clamp(2rem, 7vw, 5rem);
-}
-
-.portrait {
-    margin: 0;
-    position: relative;
-    padding: 14px;
-}
-
-/* corner registration marks, like on a technical drawing */
-.portrait::before,
-.portrait::after {
-    content: "";
-    position: absolute;
-    width: 28px;
-    height: 28px;
-    border: 0 solid var(--accent);
-}
-
-.portrait::before {
-    top: 0;
-    left: 0;
-    border-top-width: 3px;
-    border-left-width: 3px;
-}
-
-.portrait::after {
-    right: 0;
-    bottom: 26px;
-    border-right-width: 3px;
-    border-bottom-width: 3px;
-}
-
-.avatar {
-    display: block;
-    width: 100%;
-    height: auto;
-    border-radius: var(--radius);
-    transition: border-radius .3s;
-}
-
-.av-bg { fill: var(--surface); stroke: var(--line); stroke-width: 2; }
-.av-fill { fill: color-mix(in srgb, var(--accent) 22%, var(--surface)); }
-.av-line { fill: none; stroke: var(--ink); stroke-width: 4; }
-.av-center { fill: none; stroke: var(--muted); stroke-width: 1.5; stroke-dasharray: 24 6 4 6; }
-.av-dim { fill: none; stroke: var(--muted); stroke-width: 1.5; }
-.av-arrow { fill: var(--muted); }
-.av-text { fill: var(--muted); font: 500 18px var(--font-mono); }
-
-.portrait figcaption {
-    margin-top: .6rem;
-    color: var(--muted);
+    align-items: end;
+    padding-block: clamp(3rem, 10vw, 7rem);
 }
 
 .hero-text h1 {
@@ -233,7 +201,7 @@ a:hover {
     font-size: var(--step-1);
     line-height: 1.45;
     max-width: 34ch;
-    margin: 1rem 0 2rem;
+    margin: 1.25rem 0 0;
 }
 
 /* facts laid out like the title block in the corner of a drawing */
@@ -443,10 +411,6 @@ strong {
 @media (max-width: 720px) {
     .hero {
         grid-template-columns: 1fr;
-    }
-
-    .portrait {
-        max-width: 320px;
     }
 
     .panel {
