@@ -20,7 +20,7 @@ const OPTIONS = {
     fruit: {
         default: "none",
         items: {
-            none: { label: "Machine yellow", color: "#f2b705" },
+            none: { label: "Classic yellow", color: "#f2b705" },
             watermelon: { label: "Watermelon", color: "#ef5b6b" },
             orange: { label: "Orange", color: "#f7931e" },
             banana: { label: "Banana", color: "#f5d547" },
